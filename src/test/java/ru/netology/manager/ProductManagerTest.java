@@ -17,6 +17,8 @@ public class ProductManagerTest {
     private Smartphone smartFirst = new Smartphone(1, "Huawei P40", 11700, "Huawei");
     private Smartphone smartSecond = new Smartphone(2, "Samsung Galaxy S20", 31600, "Samsung");
     private Smartphone smartThird = new Smartphone(3, "Motorola Razr", 1600, "Motorola");
+    private Smartphone smartFourth = new Smartphone(4, "Samsung Galaxy S30", 51000, "Samsung");
+    
 
     @BeforeEach
     public void setUp() {
@@ -26,6 +28,7 @@ public class ProductManagerTest {
         manager.add(smartFirst);
         manager.add(smartSecond);
         manager.add(smartThird);
+        manager.add(smartFourth);
     }
 
     @Test
@@ -69,5 +72,12 @@ public class ProductManagerTest {
         Product[] expected = new Product[0];
         assertArrayEquals(expected,actual);
     }
-
+    
+    @Test
+    public void shouldSearchByManufacturerTwo() {
+        Product[] actual = manager.searchBy("Samsung");
+        Product[] expected = new Smartphone[]{smartSecond, smartFourth};
+        assertArrayEquals(expected, actual);
+    }    
+      
 }
