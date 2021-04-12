@@ -34,7 +34,7 @@ public class ProductManagerTest {
     @Test
     public void shouldGetAll() {
         Product[] actual = manager.getAll();
-        Product[] expected = new Product[]{bookFirst, bookSecond, bookThird, smartFirst, smartSecond, smartThird};
+        Product[] expected = new Product[]{bookFirst, bookSecond, bookThird, smartFirst, smartSecond, smartThird, smartFourth};
         assertArrayEquals(expected, actual);
     }
 
