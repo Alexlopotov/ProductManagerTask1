@@ -62,5 +62,12 @@ public class ProductManagerTest {
         Product[] expected = new Smartphone[]{smartFirst};
         assertArrayEquals(expected, actual);
     }
+    
+    @Test
+    public void shouldSearchByNotFoundWordTest(){
+        Product[] actual = manager.searchBy("French");
+        Product[] expected = new Product[0];
+        assertArrayEquals(expected,actual);
+    }
 
 }
